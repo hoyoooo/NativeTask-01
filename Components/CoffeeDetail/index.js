@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import CoffeStore from "../../store/coffeStore"
 
 // NativeBase Components
 import {
@@ -18,7 +19,9 @@ import {
 import styles from "./styles";
 
 //List
-import coffeeshops from "../CoffeeList/list";
+//import coffeeshops from "../CoffeeList/list";
+// import CoffeStore from "../store/coffeStore";
+
 
 class CoffeeDetail extends Component {
   constructor(props) {
@@ -43,7 +46,7 @@ class CoffeeDetail extends Component {
 
   render() {
     if (!coffeeshops) return <Content />;
-    const coffeeshop = coffeeshops[0];
+    const coffeeshop = CoffeStore.coffeeshops;
     return (
       <Content>
         <List>
